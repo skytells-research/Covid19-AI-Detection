@@ -52,12 +52,13 @@ When passing an X-Ray image to the model, it analyzes the image deeply and respo
 The DeepBrain model was trained with more than 1,300 images in high resolution
 
 #### PRECISION RECALL
-----------------------------------
-Class              Precision(%)   Recall(%)      
-BacterialPneumonia 94.74          85.71          
-Covid19            98.57          100.00         
-Normal             100.00         97.22          
-ViralPneumonia     92.31          97.30         
+| Class   |      Precision(%)      |  Recall(%) |
+|----------|:-------------:|------:|
+| BacterialPneumonia |  94.74 | 85.71 |
+| ViralPneumonia |    92.31   |   97.30 |
+| Covid19 | 98.57 |    100.00 |
+| Normal | 100.00 |    97.22 |
+
 
 #### Type
 
