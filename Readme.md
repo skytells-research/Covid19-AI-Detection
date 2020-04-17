@@ -54,7 +54,12 @@ The DeepBrain model was trained with more than 1,300 images in high resolution
 #### Type
 
 Image Classifier
+
+##### Classifiers
 - `XRayClassifier`
+    - Quick detection - low accuracy of detection ratio
+- `DeepClassifier`
+    - Takes some time for detection - high accuracy of detection ratio 
 
 #### Description
 
