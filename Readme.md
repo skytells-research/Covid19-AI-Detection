@@ -1,7 +1,9 @@
 # COVID-19 Detection using AI
 Detection of COVID-19 using Skytells's DeepBrain for Apple's CoreML.
+
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
-[![Generic badge](https://img.shields.io/badge/Build-Stable-green.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/build-btable-green.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
+[![Generic badge](https://img.shields.io/badge/platform-ios-blue.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
 
 ## Background
 The 2019 novel coronavirus (COVID-19) presents several unique features. While the diagnosis is confirmed using polymerase chain reaction (PCR), infected patients with pneumonia may present on chest X-ray and computed tomography (CT) images with a pattern that is only moderately characteristic for the human eye [Ng, 2020](https://pubs.rsna.org/doi/10.1148/ryct.2020200034). COVID-19’s rate of transmission depends on our capacity to reliably identify infected patients with a low rate of false negatives. In addition, a low rate of false positives is required to avoid further increasing the burden on the healthcare system by unnecessarily exposing patients to quarantine if that is not required. Along with proper infection control, it is evident that timely detection of the disease would enable the implementation of all the supportive care required by patients affected by COVID-19.
