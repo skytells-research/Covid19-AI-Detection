@@ -59,7 +59,16 @@ Image Classifier
 - `XRayClassifier`
     - Quick detection - low accuracy of detection ratio
 - `DeepClassifier`
-    - Takes some time for detection - high accuracy of detection ratio 
+    - Takes some time for detection - high accuracy of detection ratio
+
+##### Detection Ability
+The DeepBrain model was trained to detect the following:
+
+- COVID-19
+- Bacterial Pneumonia
+- Viral Pneumonia
+
+The model responds with `Normal` incase of none of above was detected during the classification.
 
 #### Description
 
