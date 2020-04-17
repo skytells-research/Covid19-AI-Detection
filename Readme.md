@@ -5,6 +5,17 @@ Detection of COVID-19 using Skytells's DeepBrain for Apple's CoreML.
 [![Generic badge](https://img.shields.io/badge/Platform-iOS-blue.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
 [![Generic badge](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
 
+## Abstract
+COVID-19 has widely spread all over the world since the first case was detected at the end of 2019.
+Early diagnosis of the disease is important for treatment and the isolation of the patients to prevent the virus spread.
+
+[![N|Solid](https://www.itnonline.com/sites/itnonline/files/styles/content_large/public/CovidHeatMaps.gif?itok=pqBOobN1)](https://github.com/skytells-research/Covid19-AI-Detection)
+
+> Representative examples of the attention heatmaps generated using Grad-CAM method for (a) COVID-19, (b) CAP, and (c) Non-Pneumonia. The heatmaps are standard Jet colormap and overlapped on the original image, the red color highlights the activation region associated with the predicted class. COVID-19 = coronavirus disease 2019, CAP = community acquired pneumonia. Image courtesy of the journal Radiology
+
+The DeepBrain model, was developed to extract visual features from 4,356 computed tomography (CT) exams from 3,322 patients for the detection of COVID-19. Community acquired pneumonia (CAP) and non-pneumonia CT exams were included to test the robustness of the model.
+The per-exam sensitivity and specificity for detecting COVID-19 in the independent test set was 90 percent and 96 percent, respectively.
+
 ## Background
 The 2019 novel coronavirus (COVID-19) presents several unique features. While the diagnosis is confirmed using polymerase chain reaction (PCR), infected patients with pneumonia may present on chest X-ray and computed tomography (CT) images with a pattern that is only moderately characteristic for the human eye [Ng, 2020](https://pubs.rsna.org/doi/10.1148/ryct.2020200034). COVID-19’s rate of transmission depends on our capacity to reliably identify infected patients with a low rate of false negatives. In addition, a low rate of false positives is required to avoid further increasing the burden on the healthcare system by unnecessarily exposing patients to quarantine if that is not required. Along with proper infection control, it is evident that timely detection of the disease would enable the implementation of all the supportive care required by patients affected by COVID-19.
 
@@ -21,30 +32,35 @@ Companies are developing AI tools and deploying them at hospitals [Wired 2020](h
 ## Goal
 
 Our goal is to use these images to develop AI based approaches to predict and understand the infection.
-The tasks are as follows using chest X-ray or CT (preference for X-ray) as input to predict these tasks:
 
 
+## Test Results
+When passing an X-Ray image to the model, it analyzes the image deeply and respond with classification results
 
-## Requirements
+[![N|Solid](images/test-1.png)](https://github.com/skytells-research/Covid19-AI-Detection)
+
+## Getting Started
+
+### Requirements
 - Xcode 10.3+
 - iOS 12.0+
 - Swift 4.2
 - DeepBrain CoreML Model
 
-## Trained Model
+### Trained Model
 
 The DeepBrain model was trained with more than 1,300 images in high resolution
 
-### Type
+#### Type
 
 Image Classifier
 - `XRayClassifier`
 
-### Description
+#### Description
 
 The model trained to detect COVID-19 from X-Ray & CT Images.
 
-## Languages
+### Languages
 The app was manually translated to
 * 🇺🇸 English (US)
 
