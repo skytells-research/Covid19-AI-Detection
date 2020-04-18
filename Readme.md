@@ -98,8 +98,8 @@ The model trained to detect COVID-19 from X-Ray & CT Images.
 
 ### Install CoreML Tools
 From macOS Terminal run the following command.
-```
-$ > pip install coremltools
+```sh
+$ pip install coremltools
 ```
 
 ### Add DeepBrain to your App
@@ -108,6 +108,40 @@ A new object with the name of your model and its properties will be automaticall
 You can see information about the model by opening it in Xcode.
 When viewing mine, we can see the model type and the inputs/outputs we configured when converting the model.
 
+#### Setup Vision
+First of all we need to create a method to load DeepBrain model and setup the live vision.
+```swift
+func setupVision() {
+        // Setup Vision parts
+        guard let modelURL = Bundle.main.url(forResource: "DeepBrain", withExtension: "mlmodelc") else {
+            print("Model file is missing")
+          return
+        }
+        do {
+            let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
+            let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
+                DispatchQueue.main.async(execute: {
+                    // perform all the UI updates on the main queue
+                    if let results = request.results {
+                        self.drawVisionRequestResults(results)
+                    }
+                })
+            })
+            self.requests = [objectRecognition]
+        } catch let error as NSError {
+            print("Model loading went wrong: \(error)")
+        }
+  }
+```
+
+Then, Call this method on `viewDidLoad()` method.
+
+```swift
+override func viewDidLoad() {
+        super.viewDidLoad()
+        setupAVCapture()
+  }
+```
 
 #### Making Predictions
 Simply call the prediction method to get our predictions.
