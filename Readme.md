@@ -62,13 +62,13 @@ The DeepBrain model was trained with more than 16,000 images in high resolution
 
 #### TRAINING AUGMENTATIONS
 | Augment Data   |    Status    |
-|----------|------:|
-| Noise | ✔︎ |
-| Flip | ✔︎ |
-| Crop | ✔︎ |
-| Blur | ✕ |
-| Expose | ✕ |
-| Rotate | ✔︎ |
+|----------|----:|
+| Noise |✔︎ |
+| Flip |✔︎ |
+| Crop |✔︎ |
+| Blur |✕ |
+| Expose |✕ |
+| Rotate |✔︎ |
 
 #### Type
 
@@ -112,7 +112,7 @@ When viewing mine, we can see the model type and the inputs/outputs we configure
 #### Making Predictions
 Simply call the prediction method to get our predictions.
 
-```
+```swift
 func predict(image: UIImage) {
     do {
         if let resizedImage = resize(image: image, newSize: trainedImageSize), let pixelBuffer = resizedImage.toCVPixelBuffer() {
@@ -123,8 +123,6 @@ func predict(image: UIImage) {
     } catch {
         print("Error while doing predictions: \(error)")
     }
-
-
 }
 ```
 
