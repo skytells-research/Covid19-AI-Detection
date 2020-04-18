@@ -66,8 +66,8 @@ The DeepBrain model was trained with more than 16,000 images in high resolution
 | Noise |✔︎ |
 | Flip |✔︎ |
 | Crop |✔︎ |
-| Blur |✕ |
-| Expose |✕ |
+| Blur |✔︎ |
+| Expose |✔︎ |
 | Rotate |✔︎ |
 
 #### Type
@@ -139,7 +139,7 @@ Then, Call this method on `viewDidLoad()` method.
 ```swift
 override func viewDidLoad() {
         super.viewDidLoad()
-        setupAVCapture()
+        setupVision()
   }
 ```
 
