@@ -4,6 +4,7 @@ Detection of COVID-19 using Skytells's DeepBrain for Apple's CoreML.
 [![Generic badge](https://img.shields.io/badge/Build-Stable-green.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
 [![Generic badge](https://img.shields.io/badge/Platform-iOS-blue.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
 [![Generic badge](https://img.shields.io/badge/SQC-PASS-green.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
+[![Generic badge](https://img.shields.io/badge/Language-Swift 5.2-orange.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
 [![Generic badge](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/skytells-research/Covid19-AI-Detection)
 
 ## Abstract
