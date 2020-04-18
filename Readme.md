@@ -60,11 +60,23 @@ The DeepBrain model was trained with more than 16,000 images in high resolution
 | Normal | 100.00 |    97.22 |
 
 
+#### TRAINING AUGMENTATIONS
+| Augment Data   |    Status    |
+|----------|------:|
+| Noise | ✔︎ |
+| Flip | ✔︎ |
+| Crop | ✔︎ |
+| Blur | ✕ |
+| Expose | ✕ |
+| Rotate | ✔︎ |
+
 #### Type
 
 Image Classifier
 
 ##### Classifiers
+- `ImageClassifier`
+    - Regular ImageClassifier Class.
 - `XRayClassifier`
     - Quick detection - low accuracy of detection ratio
 - `DeepClassifier`
@@ -83,7 +95,40 @@ The model responds with `Normal` incase of none of above was detected during the
 
 The model trained to detect COVID-19 from X-Ray & CT Images.
 
-### Languages
+
+### Install CoreML Tools
+From macOS Terminal run the following command.
+```
+$ > pip install coremltools
+```
+
+### Add DeepBrain to your App
+Start by adding the model to your Xcode project by dragging the model into the project navigator.
+A new object with the name of your model and its properties will be automatically generated.
+You can see information about the model by opening it in Xcode.
+When viewing mine, we can see the model type and the inputs/outputs we configured when converting the model.
+
+
+#### Making Predictions
+Simply call the prediction method to get our predictions.
+
+```
+func predict(image: UIImage) {
+    do {
+        if let resizedImage = resize(image: image, newSize: trainedImageSize), let pixelBuffer = resizedImage.toCVPixelBuffer() {
+            let model = DeepBrain()
+            let prediction = try model.prediction(data: pixelBuffer)
+
+        }
+    } catch {
+        print("Error while doing predictions: \(error)")
+    }
+
+
+}
+```
+
+## Languages
 The app was manually translated to
 * 🇺🇸 English (US)
 
