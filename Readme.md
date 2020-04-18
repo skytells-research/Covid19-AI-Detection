@@ -49,7 +49,7 @@ When passing an X-Ray image to the model, it analyzes the image deeply and respo
 
 ### Model
 
-The DeepBrain model was trained with more than 1,300 images in high resolution
+The DeepBrain model was trained with more than 16,000 images in high resolution
 
 #### PRECISION RECALL
 | Class   |      Precision(%)      |  Recall(%) |
