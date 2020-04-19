@@ -167,27 +167,26 @@ You can use DeepBrain for Realtime prediction by creating a method with:
 ```swift
 // MARK: - Capture Session
 
-	func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
 
-		// Get the pixel buffer from the capture session
-		guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+	// Get the pixel buffer from the capture session
+	guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 
-		// load the Core ML model
-		guard let visionModel:VNCoreMLModel = try? VNCoreMLModel(for: DeepBrain().model) else { return }
+	// load the Core ML model
+	guard let visionModel:VNCoreMLModel = try? VNCoreMLModel(for: DeepBrain().model) else { return }
 
-		//  set up the classification request
-		let classificationRequest = VNCoreMLRequest(model: visionModel, completionHandler: handleClassification)
+	//  set up the classification request
+	let classificationRequest = VNCoreMLRequest(model: visionModel, completionHandler: handleClassification)
 
-		// automatically resize the image from the pixel buffer to fit what the model needs
+	// automatically resize the image from the pixel buffer to fit what the model needs
 
-
-		// perform the machine learning classification
-		do {
-			try self.visionSequenceHandler.perform([classificationRequest], on: pixelBuffer)
+	// perform the machine learning classification
+	do {
+		  try self.visionSequenceHandler.perform([classificationRequest], on: pixelBuffer)
 		} catch {
 			print("Throws: \(error)")
 		}
-	}
+}
 ```
 
 Now, Create a method to handle classifications
